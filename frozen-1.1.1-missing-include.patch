@@ -1,0 +1,12 @@
+diff -up frozen-1.1.1/include/frozen/bits/pmh.h:5.omv~ frozen-1.1.1/include/frozen/bits/pmh.h:5
+diff -up frozen-1.1.1/include/frozen/bits/pmh.h.omv~ frozen-1.1.1/include/frozen/bits/pmh.h
+--- frozen-1.1.1/include/frozen/bits/pmh.h.omv~	2023-07-10 15:37:16.000503631 +0200
++++ frozen-1.1.1/include/frozen/bits/pmh.h	2023-07-10 15:37:22.640548964 +0200
+@@ -29,6 +29,7 @@
+ 
+ #include <array>
+ #include <limits>
++#include <cstdint>
+ 
+ namespace frozen {
+ 
