@@ -1,14 +1,16 @@
 Name: frozen
-Version: 1.1.1
+Version: 1.2.0
 Release: 1
-Source0: https://github.com/serge-sans-paille/frozen/archive/refs/tags/1.1.1.tar.gz
-Patch0: frozen-1.1.1-missing-include.patch
+Source0: https://github.com/serge-sans-paille/frozen/archive/refs/tags/%{version}.tar.gz
 Summary: Header-only, constexpr alternative to gperf for C++14
-URL: https://github.com/frozen/frozen
+URL: https://github.com/serge-sans-paille/frozen
 License: Apache-2.0
 Group: Development/C and C++
-BuildRequires: cmake ninja
+BuildSystem: cmake
 BuildArch: noarch
+
+%patchlist
+frozen-1.2.0-fix-build-with-Werror.patch
 
 %description
 Header-only library that provides 0 cost initialization for immutable
@@ -30,16 +32,6 @@ and the extra storage is linear with respect to the number of keys.
 Once initialized, the container keys cannot be updated, and in exchange,
 lookups are faster. And initialization is free when constexpr or constinit is
 used.
-
-%prep
-%autosetup -p1
-%cmake -G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
 
 %files
 %{_includedir}/frozen
